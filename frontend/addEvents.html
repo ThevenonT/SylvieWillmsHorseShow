@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./AddEventsStyle.css">
+    <title>Add Events</title>
+</head>
+
+<body>
+    <nav>
+        <p>+ ajouter</p>
+        <p>Evenements</p>
+    </nav>
+    <div class="container_form" id="container_form">
+        <div class="container_info">
+            <div class="title_await" id="title_await">
+                <h2>AJOUT EN COURS ...</h2>
+                <p> Merci de patienter ...</p>
+            </div>
+            <h1 class="title_err" id="title_err">Il y a un problème merci de vérifier la connexion puis réessayer...
+            </h1>
+        </div>
+        <img src="" alt="" id="image_background" class="image_background" />
+        <form class="form" action="" method="post">
+            <div class="container_input">
+                <input class="input_text" type="text" id="nom" name="nom" placeholder="Ajouter un nom à l'évènement" />
+            </div>
+            <div class="container_input_dates">
+
+                <div class="container_input_date">
+                    <label for="date_de_debut">Debut le :</label>
+                    <input class="input_date" type="date" name="date_de_debut" id="date_de_debut" required />
+                </div>
+
+                <div class="container_input_date">
+                    <label for="date_de_fin">Fin le :</label>
+                    <input class="input_date" type="date" name="date_de_fin" id="date_de_fin" required />
+                </div>
+            </div>
+
+            <div class="container_input" id="container_image">
+
+                <img id="image" class="image" src="" alt="" />
+
+                <label class="Label_chemin_de_limage" id="Label_chemin_de_limage" for="chemin_de_limage">
+                    Ajouter une affiche</label>
+
+                <input type="file" id="chemin_de_limage" class="chemin_de_limage" name="chemin_de_limage"
+                    accept="image/png, image/jpeg, image/webm, image/webp" required />
+
+            </div>
+
+            <div class="container_input">
+                <input class="input_text" type="url" id="lien" name="lien" placeholder="https://LienVersLévènement.fr"
+                    size="30" />
+            </div>
+
+            <div class="submit" onclick=(veriform())>Ajouter l'évènement</div>
+
+        </form>
+    </div>
+
+
+
+
+
+    <div class="affiche_container" id="affiche_container">
+    </div>
+
+
+    <script src="./AddEventsScript.js"></script>
+</body>
+
+</html>

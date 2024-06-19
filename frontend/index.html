@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="fr" id='html'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./images/Logo_sylvie_Willms.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Sylvie Willm's Horse Show & Events</title>
+</head>
+
+<body id="body">
+    <main id="main">
+
+        <div class="nav_list_empty"></div>
+
+        <nav id="nav_list" class="nav_list">
+
+            <div id="nav_list_btn" class="nav_list_btn" onclick="AddNavList()">
+                <span id="nav_list_btn_span_1" class="nav_list_span "></span>
+                <span id="nav_list_btn_span_none" class="nav_list_span "></span>
+                <span id="nav_list_btn_span_2" class="nav_list_span "></span>
+            </div>
+
+            <div id="container_nav_list_item" class="container_nav_list_item">
+                <div class="nav_list_item" id="nav_list_accueil" onclick="AccueilClick()">Accueil</div>
+                <div class="nav_list_item" id="nav_list_biographie"
+                    onclick="`${ScrollToThePage(document.getElementById('pages_4').offsetTop)}`">
+                    Biographie</div>
+                <div class="nav_list_item" id="nav_list_spectacle"
+                    onclick="`${ScrollToThePage(document.getElementById('page_3').offsetTop)}`">
+                    Spectacles</div>
+                <div class="nav_list_item" id="nav_list_actualite"
+                    onclick="`${ScrollToThePage(document.getElementById('page_5').offsetTop)}`">
+                    Actualité</div>
+                <div class="nav_list_item" id="nav_list_numeros"
+                    onclick="`${ScrollToThePage(document.getElementById('page_6').offsetTop)}`">
+                    Numéros</div>
+                <div class="nav_list_item" id="nav_list_contact"
+                    onclick="`${ScrollToThePage(document.getElementById('page_contact').offsetTop)}`">
+                    Contact</div>
+
+            </div>
+            <div class="nav_list_container_logo">
+                <div class="facebook_a">
+                    <img class="nav_list_logoFBK" src="./images/logo/logoFBK.png" alt="Logo media social">
+                    <iframe class="facebook_page"
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsylviewillmshorseshow%2F%3Flocale%3Dfr_FR&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="340" height="500" style="border:none; overflow:hidden;" allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+
+                <div class="instagram">
+                    <img class="nav_list_logo" src="./images/logo/logoInstagram.png" alt="Logo media social">
+                    <a class="instagram_a_item" href="https://www.instagram.com/sylviewillmsstable/?hl=fr">
+                        Ouvrir Instagram</a>
+
+                </div>
+                <div class="youtube_a">
+                    <img class="nav_list_logo" src="./images/logo/youtube.png" alt="Logo media social">
+                    <iframe class="youtube_media" width="560" height="315"
+                        src="https://www.youtube.com/embed/0ASViT_bZGE?si=jquNtc5-OMjKO-Xn&mute=1"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+
+                <div class="tiktok_a">
+                    <img class="nav_list_logo" src="./images/logo/logo_tiktok_white.png" alt="Logo media social">
+                    <div id="tiktok_embed">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sylviewillms"
+                            data-unique-id="sylviewillms" data-embed-from="embed_page" data-embed-type="creator"
+                            style="border-radius: 20px; height: 380px">
+                            <div> <a target="_blank"
+                                    href="https://www.tiktok.com/@sylviewillms?refer=creator_embed"></a>
+                            </div>
+                        </blockquote>
+                    </div>
+
+
+                </div>
+            </div>
+        </nav>
+
+        <div id="container_accueil" class="container_accueil">
+
+
+            <div class="accueil_croix" onclick="AccueilClick()">
+                <span class="accueil_croix_span_1"></span>
+                <span class="accueil_croix_span_2"></span>
+            </div>
+
+
+            <div class="container_accueil_item" onclick="ScrollToThePage(0)">
+
+                <img class="fleche_vers_le_haut" src="./images/angle-cercle-vers-le-bas.png" alt="logo" width="50"
+                    height="50">
+                <div class="container_accueil_item_text">
+                    <p>Retourner à l'accueil</p>
+                </div>
+            </div>
+
+
+
+            <div id="accueil" class="accueil">
+
+                <div class="container_accueil_item"
+                    onclick="`${ScrollToThePage(document.getElementById('pages_4').offsetTop)}`">
+                    <h3 class="container_accueil_item_titre">Biographie</h3>
+                    <img src="images/biographie/sylvie_willms_photo_enfance.jpg" alt="sylvie willms image d'enfance"
+                        width="150">
+                    <div class="container_accueil_item_text">
+                        <p> Découvrir l'incroyable histoire de Sylvie WILLMS de ses debut à sa consécration </p>
+                    </div>
+                </div>
+                <div class="container_accueil_item"
+                    onclick="`${ScrollToThePage(document.getElementById('page_3').offsetTop)}`">
+                    <h3 class="container_accueil_item_titre">Spectacles</h3>
+                    <img src='images/page_3/affiche_spectacle/1_Affiche_gala_doro.jpg' alt="affiche jumping Gala D'oro"
+                        width="150">
+                    <div class="container_accueil_item_text">
+                        <p>Découvrir la liste des spectacles emblématique de Sylvie WILLMS</p>
+                    </div>
+                </div>
+                <div class="container_accueil_item"
+                    onclick="`${ScrollToThePage(document.getElementById('page_5').offsetTop)}`">
+                    <h3 class="container_accueil_item_titre">Actualité</h3>
+                    <img src='images/page_3/affiche_spectacle/4_Affiche_equestria.jpg' alt="affiche jumping Gala D'oro"
+                        width="150">
+                    <div class="container_accueil_item_text">
+                        <p>Découvrir la liste des prochain spectacles de Sylvie WILLMS</p>
+                    </div>
+                </div>
+                <div class="container_accueil_item"
+                    onclick="`${ScrollToThePage(document.getElementById('page_6').offsetTop)}`">
+                    <h3 class="container_accueil_item_titre">Numéros</h3>
+                    <img src='images/sylvie_liberte_fond_noir.jpeg' alt="affiche jumping Gala D'oro" width="150">
+                    <div class="container_accueil_item_text">
+                        <p>Découvrir les numéros proposer par Sylvie WILLMS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container_loader" id="container_loader">
+            <video class="container_loader_img" autoplay muted loop playsinline>
+                <source src="./images/logo_sylvie_animation_chargement_3840_2160px.mp4" />
+                <source src="./images/logo_sylvie_animation_chargement_1920_1080px.mp4" />
+            </video>
+            <h1 class="title_loading">chargement ...</h1>
+        </div>
+
+        <section id="page_0">
+
+            <div class="container_logoScrollUp">
+                <div class="empty_logoScrollUp">
+                    <div class="page_0_logoScrollUp" id="logoScrollUp">
+                        <img class="page_0_logoScrollUp_img" src="./images/angle-cercle-vers-le-bas.png" alt="logo"
+                            width="50" height="50" onclick="ScrollToClick()">
+                    </div>
+                </div>
+            </div>
+
+            <div id="page_0_container_image" class="page_0_container_image">
+                <img src='images/page_0/image_1_transparent.png' alt="presentation Sylvie Willms" id="imageTRSP"
+                    class="page_0_imageTRSP">
+                <img src='images/page_0/image_1.png' alt="presentation Sylvie Willms" id="image" class="image">
+            </div>
+
+            <div class="page_0_container_text">
+
+                <div class="page_0_container_titre">
+                    <h2 class="page_0_titre">Sylvie Willms</h2>
+                    <h2 class="page_0_sous_titre">La fée qui danse avec les chevaux.</h2>
+
+                </div>
+
+                <div class="page_0_text" id="text">
+                    <p id="text_item" class="page_0_text_item">
+                        <!--  Dans une chorégraphie envoûtante, Sylvie Willms incarne la fée qui danse avec les
+                            chevaux, dévoilant une harmonie
+                            parfaite entre ses mouvements gracieux et la majesté des équidés. Chaque pas, chaque élan
+                            est
+                            une invitation à la
+                            beauté, exécuté avec une précision magistrale, révélant une connexion symbiotique entre la
+                            fée
+                            et ses partenaires
+                            équins. -->
+                        Son art est une véritable célébration de l'élégance équestre,
+                        une danse où la grâce et la fluidité racontent une histoire enchanteresse et captivante.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="page_1" class="page_1">
+
+
+            <img src='images/image_3.png' alt="presentation Sylvie Willms" class="image_2_full">
+            <img src='images/image_3_transparent_sol.png' alt="presentation Sylvie Willms" class="image_2 image_2_sol"
+                id="image_2_sol">
+            <img src='images/image_3_transparent_cheval.png' alt="presentation Sylvie Willms"
+                class="image_2 image_2_cheval" id="image_2_cheval">
+            <img src='images/image_3_transparent_sylvie.png' alt="presentation Sylvie Willms"
+                class="image_2 image_2_sylvie" id="image_2_sylvie">
+
+            <div class="page_1_container_btn_left_right">
+
+                <div id="container_icone_info_left" class="container_icone_info_left">
+                    <div id="icone_info_left" class="icone_info_left"></div>
+                    <p class="icone_info_text">cliquer ici</p>
+                </div>
+
+                <div id="container_icone_info_right" class="container_icone_info_right">
+                    <div id="icone_info_right" class="icone_info_right"></div>
+                    <p class="icone_info_text">cliquer ici</p>
+                </div>
+
+                <div class="page_1_btn btn_left" id="page_1_btn_left">
+
+                    <div class="page_1_btn_left_text" id="page_1_btn_left_text">
+                        <h2>Née au milieu des chevaux,</h2>
+                        <p> Sylvie Willms a fait de sa vie une véritable ode à l'art équestre. Dès son plus jeune
+                            âge,
+                            elle a suivi une trajectoire unique, commençant à monter à cheval avant même de savoir
+                            marcher.
+                            Sa première apparition sur scène à l'âge de trois ans, lors du millénaire de Bruxelles,
+                            a été le point de départ d'une carrière exceptionnelle.
+                            À seulement 5 ans, elle s'est distinguée au Championnat du monde des jeunes artistes,
+                            marquant le début d'une série de performances mémorables dans des salons, des jumpings
+                            et
+                            d'autres événements prestigieux.
+                            À l'âge précoce de 17 ans, Sylvie a commencé ses tournées internationales,
+                            initialement avec Le Royal Horse Gala (1995-2002), puis avec Apassionata (2003-2012).
+                            À travers ces expériences, elle a illuminé les scènes de toute l'Europe et des
+                            États-Unis,
+                            participant à des événements aussi prestigieux que le Jubilé de la Reine d'Angleterre en
+                            2002 et le Championnat du monde des jeunes artistes à Paris.
+                            Sa présence marquante s'est également fait sentir lors de grandes manifestations
+                            équestres
+                            telles que les Crinières d'Or en 2012 et 2015,
+                            ainsi que dans des salons renommés à Lyon, Paris, Vérone, et des jumpings de renom tels
+                            que
+                            les Longines Masters à Genève et Bruxelles.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="page_1_btn btn_right" id="page_1_btn_right">
+                    <div class="page_1_btn_right_text" id="page_1_btn_right_text">
+                        <h2>Artiste complète,</h2>
+                        <p> Sylvie Willms excelle dans toutes les disciplines équestres, que ce soit
+                            en
+                            liberté ou en haute école,
+                            avec ou sans bride. Son aisance sur les scènes internationales n'a d'égale que sa
+                            capacité à
+                            captiver le public des
+                            fêtes de village. Elle offre ses numéros pour tous types de manifestations, des salons
+                            prestigieux aux foires locales,
+                            des jumpings renommés aux soirées privées exclusives.
+
+                            En plus de sa carrière scénique exceptionnelle, Sylvie met son incroyable savoir-faire
+                            au
+                            service de ses clients dans
+                            ses écuries. Elle prend en charge des chevaux en pension-travail, assurant le débourrage
+                            et
+                            le
+                            perfectionnement, que ce
+                            soit pour le spectacle ou la compétition, en dressage ou en obstacle.
+
+                            Sylvie Willms incarne véritablement l'esprit passionné de l'art équestre, captivant les
+                            spectateurs du monde entier avec
+                            sa grâce et son talent inégalés. Son parcours illustre non seulement une vie dédiée aux
+                            chevaux,
+                            mais aussi une passion
+                            inextinguible pour l'art de l'équitation.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="pages_4">
+
+            <img src='images/biographie/sylvie_troupe_spectacle.jpeg'
+                alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                class="image_fond_page_4" id="image_page_4">
+
+            <div class="page_4_container_images" id="page_4_container_images">
+
+                <div class="page_4_empty">
+                    <h2 class="titre_page_4 one">300 ans</h2>
+                    <h2 id="titre_page_4_two" class="titre_page_4 two">dédiée aux chevaux</h2>
+                </div>
+
+                <div class="container_sticky">
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">Alex Willms</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+                        <h2>Père de Sylvie</h2>
+
+                    </div>
+
+
+                    <div class="page_4_container_image">
+
+                        <img src='images/Alex_Willms/452b14_b1333e516ba144049c767ba3636d1725.jpg.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                        <div class="page_4_container_image_texte">
+                            <h2>Héritage Équestre sur huit générations avec Alex Willms</h2>
+                            <p>
+                                De son père, Alex Willms, Sylvie hérite d'un savoir équestre exceptionnel
+                                transmis à travers huit générations.
+                                Cavalier de dressage renommé, juge international et dresseur, Alex Willms a marqué son
+                                empreinte dans le monde
+                                équestre.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="page_4_container_image">
+
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Polyvalence et Collaboration avec Nuno Oliveira</h2>
+                            <p>
+                                Alex Willms, doué pour le commerce équin, a étendu son influence en tant qu'importateur
+                                de chevaux d'Irlande, de Russie
+                                et du Portugal. Il a également établi une collaboration notable avec Nuno Oliveira,
+                                grand écuyer portugais, en lançant
+                                le stud book du Lusitanien en Belgique et en créant un modèle de selle unique.
+                            </p>
+                        </div>
+                        <img src='images/Alex_Willms/alex_willms_cuire.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                    </div>
+                </div>
+
+                <div class="container_sticky">
+
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">Céline Willms</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+                        <h2>Mère de Sylvie</h2>
+
+                    </div>
+
+                    <div class="page_4_container_image">
+
+                        <img src='images/Celine_Willms/celine_Willms_concours_dressage_prix.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                        <div class="page_4_container_image_texte">
+                            <h2>Céline Willms,</h2>
+
+                            <p>
+                                étoile du dressage international et membre de l'équipe de dressage
+                                belge, a tracé sa route dans les
+                                arènes les plus prestigieuses, défiant les normes en formant elle-même ses chevaux.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="page_4_container_image">
+
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Enseignante et dresseuse accomplie</h2>
+                            <p>
+                                En parallèle de son parcours compétitif, Céline prodiguait ses enseignements à la
+                                communauté équestre de son écurie,
+                                tout en perfectionnant des chevaux de commerce avec une passion infinie.
+                            </p>
+                        </div>
+                        <img src='images/Celine_Willms/celine_willms_concours_dressage.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                    </div>
+                    <div class="page_4_container_image">
+
+                        <img src='images/Celine_Willms/celine_willms_cabrade_monter.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                        <div class="page_4_container_image_texte">
+                            <h2>Évolution artistique dans le Monde du spectacle</h2>
+                            <p>
+                                Animée par sa passion pour le spectacle, Céline s'est progressivement immergée dans cet
+                                univers captivant, laissant
+                                libre cours à sa créativité artistique. Elle s'est distinguée tant dans la conception de
+                                costumes que dans l'élaboration
+                                de numéros époustouflants.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="page_4_container_image">
+
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Créatrice audacieuse des "Ailes"</h2>
+                            <p>
+                                Céline devient la créatrice audacieuse du numéro des Ailes, marquant l'histoire en
+                                devenant la première artiste féminine
+                                à monter un cheval sans bride avec des changements de pied au temps.
+                            </p>
+                        </div>
+                        <img src='images/Celine_Willms/celine_willms_spectacle_ailes.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                    </div>
+                    <div class="page_4_container_image">
+
+                        <img src='images/Celine_Willms/celine_willms_atlan_cabrade.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                        <div class="page_4_container_image_texte">
+                            <h2>Présence Majestueuse devant la Reine </h2>
+                            <p>
+                                Habituée des scènes prestigieuses, Céline a captivé en 2002 devant la Reine
+                                d'Angleterre,
+                                Élisabeth II, lors de la célébration de son
+                                Jubilé. Une présence majestueuse qui a laissé une empreinte indélébile dans l'histoire
+                                équestre.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="page_4_container_image">
+
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Inspiration et Complicité avec Atlant</h2>
+                            <p>
+                                Son numéro en liberté avec le magnifique cheval Atlant, symbole de leur lien profond, a
+                                été une véritable source
+                                d'inspiration pour Sylvie. Cet élément déclencheur a enflammé l'amour de Sylvie pour le
+                                travail en liberté, façonnant
+                                ainsi une nouvelle ère dans son parcours équestre.
+                            </p>
+                        </div>
+                        <img src='images/Celine_Willms/celine_willms_atlan_spectacle_reverance.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                    </div>
+                </div>
+
+                <div class="container_sticky">
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">Depuis son plus jeune âge</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+
+                    </div>
+                    <div class="page_4_container_image">
+
+                        <img src='images/biographie/sylvie_willms_photo_enfance.jpg'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                        <div class="page_4_container_image_texte">
+                            <h2>Les Débuts Équestres d'une Étoile naissante</h2>
+                            <p>
+                                Dans l'écrin des écuries familiales,
+                                Sylvie fait ses premiers pas à cheval, bercée par la
+                                présence de ses parents, à deux ans et demi, Sylvie étonne déjà en maîtrisant les
+                                trois
+                                allures à cheval. À trois ans, elle s'essaie à l'amazone,
+                                dévoilant une maîtrise précoce et une connexion innée avec ses montures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container_sticky">
+
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">à 5 ans déjà</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="page_4_container_image">
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Complicité Enfantine</h2>
+                            <p>
+                                Le goût inné de Sylvie pour le travail en liberté
+                                où elle partage des moment d'intimités avec ses poneys,
+                                dans des instants de légèreté naissent les fondations
+                                d'une relation exceptionnelle avec ses
+                                partenaire équins
+                            </p>
+                        </div>
+                        <img src='images/biographie/sylvie_willms_photo_enfance_cheval_coucher.jpg'
+                            alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                            class="image_page_4">
+
+                    </div>
+
+                </div>
+
+                <div class="container_sticky">
+
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">à 15 ans</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+
+                    </div>
+                    <div class="page_4_container_image">
+
+                        <img src='images/biographie/sylvie_willms_photo_enfance_noiretblanc.jpg'
+                            alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                            class="image_page_4">
+                        <div class="page_4_container_image_texte">
+                            <h2>L'Équilibre de l'Amour</h2>
+                            <p>
+                                Sylvie cultive une harmonie où l'amour se transforme en technique.
+                                Les regards partagés avec ses compagnons équins révèlent une complicité profonde,
+                                une relation où chaque geste témoigne
+                                de l'affection inconditionnelle qui unit l'artiste à ses nobles partenaires.
+                                C'est dans cet équilibre subtil entre la tendresse et la rigueur que naissent les
+                                performances uniques de Sylvie,
+                                où l'amour au service de la technique devient la clé d'une connexion exceptionnelle.
+                                Une danse équestre où chaque pas est guidé par l'émotion, chaque mouvement tissé
+                                de la douceur qui caractérise l'amour véritable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container_sticky">
+
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">à 17 ans</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+
+                    </div>
+                    <div class="page_4_container_image">
+                        <div class="page_4_container_image_texte">
+                            <h2>La Croisée des Chemins</h2>
+                            <p>
+                                Alors que son talent pour l'obstacle la propulse vers une carrière prometteuse,
+                                Sylvie fait un choix audacieux en optant
+                                pour le monde du spectacle. Sans S'avoirs que cela serrait,
+                                le début de son envol avec le Royal Horse Gala en 1995,
+                                ouvrant la voie à une carrière exceptionnelle dans l'art équestre.
+                            </p>
+                        </div>
+                        <img src='images/biographie/sylvie_willms_photo_enfence_saut_dobstacle.jpg'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+
+                    </div>
+                </div>
+
+                <div class="container_sticky">
+
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">1995</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+                        <h2>Début avec le Royal Horse Gala</h2>
+                    </div>
+
+                    <div class="page_4_container_image">
+
+                        <img src='images/biographie/sylvie_danse_lidador_spectacle.webp'
+                            alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                            class="image_page_4">
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Harmonie Artistique</h2>
+                            <p>
+                                Sylvie fait ses débuts étincelants avec le Royal Horse Gala,
+                                inaugurant une époque de performances équestres
+                                époustouflantes qui captivent l'imagination du public.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="page_4_container_image">
+                        <div class="page_4_container_image_texte">
+                            <h2>La Douceur de la Liberté</h2>
+                            <p>
+                                Les projecteurs se braquent sur Sylvie, alors qu'elle dévoile son art
+                                équestre exceptionnel au Royal Horse Gala,
+                                offrant des moments de grâce et de magie qui laissent le public ébahi.
+                            </p>
+
+                        </div>
+                        <img src='images/biographie/sylvie_lidador_spectacle.webp'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+
+                    </div>
+
+                    <div class="page_4_container_image">
+
+                        <img src='images/biographie/liberte_6_spectacle.jpg'
+                            alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                            class="image_page_4">
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Symphonie Équestre</h2>
+                            <p>
+                                Cette année charnière de 1995 marque le début d'un voyage équestre extraordinaire
+                                pour Sylvie, où chaque foulée sur la
+                                scène du Royal Horse Gala devient une note mélodieuse dans sa symphonie équine.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container_sticky">
+
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">2003</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+                        <h2>Transition vers Apassionata</h2>
+                    </div>
+
+                    <div class="page_4_container_image">
+                        <div class="page_4_container_image_texte">
+                            <h2>Éclat Scénique</h2>
+                            <p>Sylvie entreprend une transition gracieuse vers un nouveau chapitre de sa carrière
+                                équestre avec Apassionata. Cette
+                                année marque l'évolution artistique de Sylvie, où la fusion entre l'humain et le
+                                cheval atteint de nouveaux sommets de
+                                poésie et de connivence.</p>
+                        </div>
+                        <img src='images/biographie/sylvie_spectacle.jpg'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+
+                    </div>
+
+                    <div class="page_4_container_image">
+
+                        <img src='images/biographie/liberte_a_5.jpg'
+                            alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                            class="image_page_4">
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Connection absolue</h2>
+                            <p>Quelque soit l'endroit où Sylvie se produit, en extérieur, en intérieur avec son et
+                                lumières
+                                Sylvie et ses chevaux restent en total connection.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="page_4_container_image">
+                        <div class="page_4_container_image_texte">
+                            <h2>Ode Équestre Enchantée</h2>
+                            <p>La scène d'Apassionata devient le théâtre enchanté où Sylvie réinvente sa relation
+                                avec les chevaux, transmettant
+                                émotion et élégance à chaque numéro. Son partenariat avec Apassionata résonne comme
+                                une ode à l'harmonie équestre,
+                                définissant une époque magique de son parcours.</p>
+                        </div>
+                        <img src='images/biographie/Spectacle_cabrade_sir.jpg'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+
+                    </div>
+                </div>
+
+                <div class="container_sticky">
+
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">2012</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+                        <h2 class="container_interPage_titre">L'éclat des salons et jumpings internationaux</h2>
+                    </div>
+
+                    <div class="page_4_container_image">
+
+                        <img src='images/biographie/sylvie_frison_salon_equitalyon.png'
+                            alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                            class="image_page_4">
+
+                        <div class="page_4_container_image_texte">
+                            <h2>Lueur Équestre aux Salons de Lyon et Paris</h2>
+                            <p>Sylvie brille, fusionnant art équestre et passion dévouée. Chaque prestation
+                                transporte le public dans un univers
+                                enchanté, préambule à des sauts époustouflants.</p>
+                        </div>
+                    </div>
+
+                    <div class="page_4_container_image">
+                        <div class="page_4_container_image_texte">
+                            <h2>Représentations aux Jumpings</h2>
+                            <p>Polyvalence Équestre aux Jumpings : Naviguant avec aisance entre différentes arènes
+                                équestres, Sylvie éblouit sur la
+                                scène internationale. Les feux des Jumpings à Genève et Bruxelles témoignent de son
+                                art équestre, entre technique,
+                                passion, et connexion profonde avec ses équidés.</p>
+                        </div>
+                        <img src='images/biographie/sylvie_cheval_blanc_fond_bleu.png'
+                            alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                            class="image_page_4">
+
+
+                    </div>
+                </div>
+
+                <div class="container_sticky">
+
+                    <div class="container_titre_interPage">
+                        <div class="container_interPage_span">
+                            <span class="container_titre_interPage_span"></span>
+                            <h2 class="container_interPage_titre">2015</h2>
+                            <span class="container_titre_interPage_span"></span>
+                        </div>
+                        <h2 class="container_interPage_titre">L'envoûtement inaugural avec Cavaluna</h2>
+                    </div>
+
+                    <div class="page_4_container_image">
+
+                        <img src='images/biographie/Spectacle_liberte7_sylvie.jpg'
+                            alt="Sylvie Willms cheval lusitaniens semblant danser avec en fond la foret"
+                            class="image_page_4">
+                        <div class="page_4_container_image_texte">
+                            <h2>La magie traverse l'Allemagne</h2>
+                            <p>
+                                Sylvie fait ses premiers pas envoûtants avec Cavaluna, illuminant les salles de
+                                spectacle du pays. Chaque représentation
+                                devient un prélude à une tournée qui promet d'emporter le public dans un voyage
+                                captivant.</p>
+                        </div>
+                    </div>
+
+                    <div class="page_4_container_image">
+                        <div class="page_4_container_image_texte">
+                            <h2>Éclat Spectaculaire au Parc de Munich</h2>
+                            <p>Sylvie continue cette aventure envoûtante au parc de Munich, où chaque représentation
+                                devient un spectacle fascinant de sons
+                                et lumières. Son art équestre trouve une nouvelle expression, créant des moments
+                                inoubliables au cœur du parc thématique.</p>
+                        </div>
+                        <img src='images/biographie/sylvie_ange_cheval_coucher.jpeg'
+                            alt="Sylvie Willms cheval lusitaniens arrivant au galop sur la piste de spectacle avec un fond bleu brumeux"
+                            class="image_page_4">
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="logo_scroll_to_next_page">
+                    <h2>page suivante</h2>
+                    <img class="logo_scroll_to_next_page_img" src="./images/angle-cercle-vers-le-bas.png" alt="logo"
+                        width="50" height="50"
+                        onclick="`${ScrollToThePage(document.getElementById('page_3').offsetTop)}`">
+
+
+                </div>
+            </div>
+
+        </section>
+
+        <section id="page_3">
+
+            <img src='images/page_3/452b14_9d7babe19983452aa26a65ad25199450~mv2.jpg.webp'
+                alt="presentation Sylvie Willms" class="image_page_3" id="image_page_3">
+
+            <div class="page_3_container" id="page_3_container">
+
+                <div class="page_3_empty"></div>
+
+                <h2 class="titre_page_3">Événements passés</h2>
+
+                <h2>Défilez à travers une collection d'affiches de spectacles emblématiques,</h2>
+                <h2>révélant les moments inoubliables de la carrière de Sylvie Willms </h2>
+
+
+
+                <!--   <img src='images/page_3/affiche_spectacle/Affiche_gala_doro.jpg' alt="affiche jumping Gala D'oro"
+
+                    class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/affiche_jumping_international_de_lons_le_saunier.jpg'
+                    alt="affiche jumping international de Lons Le Saunier" class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_equestria.jpg' alt="Affiche Équestria"
+                    class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_feria_de_marboz.jpg' alt="affiche feria de marboz"
+                    class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_concours_internationnal_de_geneve.jpg'
+                    alt="affiche feria de marboz" class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_luneville.jpg' alt="affiche Lunéville"
+                    class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_jumping_international_de_vichy.jpg'
+                    alt="affiche jumping international de vichy" class="page_3_image_affiche">
+
+
+                <img src='images/page_3/affiche_spectacle/Affiche_la_garde_républicaine.jpg'
+                    alt="affiche la garde républicaine" class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_la_garde_républicaine71.jpg'
+                    alt="affiche la garde républicaine" class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_live_master.jpg' alt="affiche live master"
+                    class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_pure_passion.jpg' alt="affiche pure passion"
+                    class="page_3_image_affiche">
+
+                <img src='images/page_3/affiche_spectacle/Affiche_cabaret_du_leman.jpg' alt="affiche cabaret du leman"
+                    class="page_3_image_affiche">
+ -->
+
+                <div class="page_3_container_affiche" id="affiche_spectacle"></div>
+
+                <div class="logo_scroll_to_next_page">
+                    <h2>page suivante</h2>
+                    <img class="logo_scroll_to_next_page_img" src="./images/angle-cercle-vers-le-bas.png" alt="logo"
+                        width="50" height="50"
+                        onclick="`${ScrollToThePage(document.getElementById('page_5').offsetTop)}`">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="page_5">
+            <!--  <img src='images/page_3/affiche_spectacle/affiche_spectacle_cavalluna_2024.jpg'
+                alt="presentation Sylvie Willms" class="page_5_image" id="page_5_image"> -->
+
+            <div class="page_5_container">
+
+                <!--   <div class="page_5_container_empty"></div> -->
+                <div class="page_5_container_titre">
+                    <h2 class="page_5_titre">Événements à venir</h2>
+                </div>
+                <div class="page_5_container_evenements" id="page_5_container_evenements">
+
+
+
+                    <!--  <div class="page_5_container_evenement">
+
+                        <div class="page_5_container_evenement_item_texte_left">
+                            <h3>Concours hippique international de Genève</h3>
+                            <p>Date: ex: 20/02/2024 au 24/02/2024</p>
+                        </div>
+
+                        <div class="page_5_container_evenement_item_img">
+                            <img src='./images/page_3/affiche_spectacle/2_Affiche_concours_internationnal_de_geneve.jpg'
+                                alt="presentation de l'événement" class="image_page_5">
+                        </div>
+
+
+                        <div class="page_5_container_evenement_item_texte_right">
+                            <p>Lien : lien vers la page de l'événement</p>
+                        </div>
+
+                    </div>
+
+                    <div class="page_5_container_evenement">
+
+                        <div class="page_5_container_evenement_item_texte_left">
+                            <h3>LAND OF A THOUSAND DREAMS</h3>
+                            <p> 01/10/2023 au 31/08/2024</p>
+                        </div>
+
+                        <div class="page_5_container_evenement_item_img">
+                            <img src='./images/page_3/affiche_spectacle/affiche_spectacle_cavalluna_2024.jpg'
+                                alt="presentation de l'événement" class="image_page_5">
+                        </div>
+
+
+                        <a href="https://www.cavalluna.com/fr/billets-et-dates" target="_blank"
+                            class="page_5_container_evenement_item_texte_right">
+                            <p>Acheter un billet</p>
+
+                        </a>
+                    </div>
+
+                    <div class="page_5_container_evenement">
+
+                        <div class="page_5_container_evenement_item_texte_left">
+                            <h3>LAND OF A THOUSAND DREAMS</h3>
+                            <p> 01/10/2023 au 31/08/2024</p>
+                        </div>
+
+                        <div class="page_5_container_evenement_item_img">
+                            <img src='./images/page_3/affiche_spectacle/affiche_spectacle_sylvie_salon_du_cheval_de_paris.jpg'
+                                alt="presentation de l'événement" class="image_page_5">
+                        </div>
+
+
+                        <a href="https://www.cavalluna.com/fr/billets-et-dates" target="_blank"
+                            class="page_5_container_evenement_item_texte_right">
+                            <p>Acheter un billet</p>
+
+                        </a>
+
+                    </div> -->
+                    <div class="page_5_container_evenement">
+                        <img src="./images/sylvie_liberte_fond_noir.jpeg" alt="page suivante" class="page_5_image"
+                            id="page_5_image">
+                        <div class="logo_scroll_to_next_page">
+                            <div class="page_5_container_evenement_item_img" id="logo_scroll_to_next_page_img">
+                                <h2>page suivante</h2>
+                                <img class="logo_scroll_to_next_page_img" src="./images/angle-cercle-vers-le-bas.png"
+                                    alt="logo" width="50" height="50"
+                                    onclick="`${ScrollToThePage(document.getElementById('page_6').offsetTop)}`">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+        <section id="page_6">
+            <img src='images/Spectacle_blanquito_fond_bleu.webp' alt="presentation Sylvie Willms" class="image_page_6">
+
+            <div class="container_page_6_numeros">
+
+                <!--    <div class="container_page_6_numero">
+                    <div class="container_page_6_numero_titre">
+                        <h2>Once Upon a Time</h2>
+                    </div>
+                    <div class="container_page_6_numero_texte">
+                        <p>Cascades, haute école, voltige en ligne, liberté, chevalerie...</p>
+                        <p>Mélange réussi entre les numéros explosifs des cascadeurs,</p>
+                        <p> et ceux, magique et poétique, de sylvie Willms</p>
+                    </div>
+                    <div id="Once_Upon_a_Time" class="container_page_6_numero_images">
+
+                    </div>
+
+                </div> -->
+
+
+                <div class="container_page_6_numero">
+
+                    <div class="container_page_6_numero_titre">
+                        <h2>3 frisons, plusieurs possibilités:</h2>
+                    </div>
+
+                    <div class="container_page_6_texte_image">
+
+                        <div class="container_page_6_texte">
+
+                            <div class="container_page_6_numero_texte">
+                                <p> * Découvrez Sylvie sur son majestueux frison parfaitement dressé en haute école,</p>
+                                <p> un véritable athlète tout en muscles saillants.</p>
+                                <p>Ce numéro peut être présenté en complicité avec un danseur,</p>
+                                <p> pour un duo qui joue sur le sentiment amoureux et la séduction.</p>
+
+                                <p> * Deux générations en miroir. Elles pourraient être soeurs tant elles se
+                                    ressemblent,
+                                </p>
+                                <p> et le puissant lien qui les lie se ressent
+                                    dans ce numéro où elles évoluent côte à côte.
+                                </p>
+                                <p> * A cheval, Sylvie est rattrapée par un autre frison en liberté, pour un dextre.</p>
+                                <p> * Le dernier numéro des frisons montés est un condensé de leur savoir faire: Sylvie
+                                    et
+                                <p> Céline,en pas de deux, sont rejointes par le troisième frison qui se place entre
+                                    elles
+                                    puis
+                                    évolue aux côtés de Sylvie. </p>
+                            </div>
+
+                        </div>
+
+                        <div id="Pas_de_Deux" class="container_page_6_numero_images"></div>
+                    </div>
+
+                </div>
+                <div class="container_page_6_numero">
+                    <div class="container_page_6_texte_image">
+                        <div class="container_page_6_numero_titre">
+                            <h2>Liberté à plusieurs chevaux</h2>
+                        </div>
+                        <div class="container_page_6_texte">
+
+
+                            <div class="container_page_6_numero_texte">
+                                <p> Un véritable troupeau sauvage.</p>
+                                <p> D'un geste, d'un mot, Sylvie fait danser ses chevaux.</p>
+                                <p> * A cheval, Sylvie est rattrapée par un autre frison en liberté, pour un dextre.</p>
+                                <p>
+                                    Ce numéro, dont la chorégraphie varie en fonction des spectacles et du thème, est un
+                                    pur
+                                    moment
+                                    de poésie. Ensemble, ils nous entraînent dans un autre univers, digne d'un conte de
+                                    fées.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="Liberte" class="container_page_6_numero_images"></div>
+                    </div>
+
+                </div>
+
+                <div class="container_page_6_numero">
+                    <div class="container_page_6_numero_titre">
+                        <h2>Jimmy</h2>
+                    </div>
+                    <div class="container_page_6_texte_image">
+                        <div class="container_page_6_texte">
+                            <div class="container_page_6_numero_texte">
+                                <p>
+                                    Le bel entier rivalise de fougue et d'adresse pour montrer au public
+                                    qu'il a beau être petit, il n'en est pas moins impressionnant!
+                                    Ses cabrades et ses cabrioles le prouvent bien.
+                                </p>
+                                <p> Comique, énergique, cette petite bombe sait séduire le public.</p>
+
+
+                            </div>
+                        </div>
+
+                        <div id="jimmy" class="container_page_6_numero_images"></div>
+                    </div>
+
+                </div>
+                <div class="container_page_6_numero">
+                    <div class="container_page_6_numero_titre">
+                        <h2>Les Hercules: La Liberté des Frisons</h2>
+                    </div>
+                    <div class="container_page_6_texte_image">
+                        <div class="container_page_6_texte">
+
+                            <div class="container_page_6_numero_texte">
+                                <p> Titanesques, les trois colosses noirs impressionnent. </p>
+                                <p> Ils évoluent fièrement aux côtés de l'artiste,
+                                    chevaliers autour de leur princesse qui iraient au bout du monde pour elle.</p>
+
+                            </div>
+                        </div>
+                        <div id="les_hercules" class="container_page_6_numero_images"></div>
+                    </div>
+
+
+                    <div class="logo_scroll_to_next_page">
+                        <h2>page suivante</h2>
+                        <img class="logo_scroll_to_next_page_img" src="./images/angle-cercle-vers-le-bas.png" alt="logo"
+                            width="50" height="50"
+                            onclick="`${ScrollToThePage(document.getElementById('page_contact').offsetTop)}`">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="page_contact">
+
+            <div class="container_page_contact">
+                <div class="container_accueil_item" onclick="ScrollToThePage(0)">
+
+                    <img class="fleche_vers_le_haut" src="./images/angle-cercle-vers-le-bas.png" alt="logo" width="50"
+                        height="50">
+                    <div class="container_accueil_item_text">
+                        <p>Retourner à l'accueil</p>
+                    </div>
+                </div>
+                <h2 class="page_contact_titre">Contact</h2>
+
+
+                <div class="container_page_contact_item ">
+                    <div class="page_contact_item top_left">
+                        <a href="mailto:willms.sylvie@gmail.com" target="_blank">
+                            <img src="./images/logo/logo_email.png" alt="logo email" width="150">
+                        </a>
+                    </div>
+                    <div class="page_contact_item top_right">
+                        <a href="tel:+33686448571" target="_blank">
+                            <img src="./images/logo/logo_iphone.png" alt="logo_iphone" width="150">
+                        </a>
+                    </div>
+                </div>
+                <div class="container_page_contact_item ">
+                    <div class="page_contact_item bottom_left">
+
+                        <a href="https://maps.app.goo.gl/BCnJUELjPbuiAjxJ9" target="_blank">
+                            <img src="./images/logo/logo_localise.png" alt="logo_localise" width="150">
+                        </a>
+
+                    </div>
+
+                    <div class="page_contact_item bottom_right">
+                        <div class="page_contact_item_container">
+                            <div class="page_contact_item_container_info">
+                                <a href="tel:+33686448571" target="_blank">
+                                    <p>06 86 44 85 71</p>
+                                </a>
+                                <a href="mailto:willms.sylvie@gmail.com" target="_blank">
+                                    <p>willms.sylvie@gmail.com</p>
+                                </a>
+
+                                <a href="https://maps.app.goo.gl/BCnJUELjPbuiAjxJ9" target="_blank">
+                                    <p>5 rue du Château </p>
+                                    <p>71 370 Villargeault - France</p>
+                                </a>
+                            </div>
+                            <div class="container_logo_contact">
+
+                                <div class="facebook_a">
+                                    <a href="https://www.facebook.com/sylviewillmshorseshow?ref=embed_page"
+                                        target="_blank">
+                                        <img class="nav_list_logoFBK" src="./images/logo/logoFBK.png"
+                                            alt="Logo media social">
+                                    </a>
+
+                                </div>
+
+                                <div class="instagram">
+                                    <a href="https://www.instagram.com/sylviewillmsstable/?hl=fr" target="_blank">
+                                        <img class="nav_list_logo" src="./images/logo/logoInstagram.png"
+                                            alt="Logo media social">
+                                    </a>
+
+                                </div>
+
+                                <div class="youtube_a">
+                                    <a href="https://www.youtube.com/watch?time_continue=12&v=0ASViT_bZGE&embeds_referring_euri=http%3A%2F%2F127.0.0.1%3A5500%2F&source_ve_path=Mjg2NjIsMzY4NDIsMjg2NjIsMjg2NjY&feature=emb_logo&themeRefresh=1"
+                                        target="_blank">
+                                        <img class="nav_list_logo" src="./images/logo/youtube.png"
+                                            alt="Logo media social">
+                                    </a>
+                                </div>
+
+                                <div class="tiktok_a">
+                                    <a href="https://www.tiktok.com/@sylviewillms?referer_url=127.0.0.1%3A5500%2Ffrontend%2F&refer=creator_embed&embed_source=71929435%2C121374463%2C121351166%2C121331973%2C120811592%2C120810756%3Bnull%3Bembed_discover_button"
+                                        target="_blank">
+                                        <img class="nav_list_logo" src="./images/logo/logo_tiktok_white.png"
+                                            alt="Logo media social">
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script defer src="https://www.tiktok.com/embed.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
